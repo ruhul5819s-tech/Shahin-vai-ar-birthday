@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bhai!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Card Style */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: cardEntrance 1s ease-out;
+        }
+
+        /* Cake Icon Animation */
+        .cake {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        h1 {
+            color: #ff4757;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            color: #2f3542;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .highlight {
+            color: #2e86de;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Background Balloons Effect */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 50px;
+            background: #ff6b81;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: float Up 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 18px;
+            width: 2px;
+            height: 10px;
+            background: #a4b0be;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                transform: translateY(-110vh) rotate(20deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="balloon" style="left: 10%; animation-delay: 0s; background: #ff4757;"></div>
+    <div class="balloon" style="left: 30%; animation-delay: 2s; background: #2e86de; width: 50px; height: 62px;"></div>
+    <div class="balloon" style="left: 70%; animation-delay: 1s; background: #ffa502;"></div>
+    <div class="balloon" style="left: 85%; animation-delay: 4s; background: #2ed573; width: 35px; height: 45px;"></div>
+
+    <div class="card">
+        <div class="cake">🎂</div>
+        <h1>Happy Birthday Vai!</h1>
+        <p>Many Many returns of the day.</p>
+        <p class="highlight">I am lucky to have a brother like you.</p>
+    </div>
+
+</body>
+</html>
